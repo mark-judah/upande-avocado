@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-05-06 05:57:02.156960",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_assumptions",
+  "avg_crate_weight_kg",
+  "column_break_1",
+  "reject_pct",
+  "section_box_sizes",
+  "box_sizes_help",
+  "box_sizes"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_assumptions",
+   "fieldtype": "Section Break",
+   "label": "Yield Assumptions"
+  },
+  {
+   "default": "18",
+   "description": "Used to estimate total incoming kg from crate count when stickers are pre-printed before weighing.",
+   "fieldname": "avg_crate_weight_kg",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Average Crate Weight (kg)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "20",
+   "description": "Percentage of incoming kg expected to be rejected during sorting (subtracted before sticker calc).",
+   "fieldname": "reject_pct",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Expected Reject %",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_box_sizes",
+   "fieldtype": "Section Break",
+   "label": "Box Size Allocations"
+  },
+  {
+   "fieldname": "box_sizes_help",
+   "fieldtype": "HTML",
+   "options": "<div style=\"font-size:12px;color:#6c7178;\">Define each box class and what percentage of the export kg goes into it. Allocations should sum to 100%.</div>"
+  },
+  {
+   "fieldname": "box_sizes",
+   "fieldtype": "Table",
+   "label": "Box Sizes",
+   "options": "Sticker Box Allocation",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-05-06 05:57:02.156960",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Sticker Calculation Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "General Manager Kaitet",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CALLOC-{#####}",
+ "creation": "2026-05-06 06:41:36.532278",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "crate_id",
+  "team_id",
+  "harvestor",
+  "block_ref",
+  "batch_id_ref",
+  "status",
+  "allocated_at",
+  "released_by",
+  "released_at",
+  "truck"
+ ],
+ "fields": [
+  {
+   "description": "Link to Crate master (the QR-encoded ID).",
+   "fieldname": "crate_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Crate",
+   "options": "Crate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "team_id",
+   "fieldtype": "Link",
+   "label": "Team",
+   "options": "Harvest Team"
+  },
+  {
+   "fieldname": "harvestor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Harvestor",
+   "options": "Employee"
+  },
+  {
+   "description": "Denormalised block value for filter perf",
+   "fieldname": "block_ref",
+   "fieldtype": "Data",
+   "label": "Block (ref)"
+  },
+  {
+   "fieldname": "batch_id_ref",
+   "fieldtype": "Link",
+   "label": "Batch (ref)",
+   "options": "Harvest Batch"
+  },
+  {
+   "default": "In Field",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "In Field\nFilling\nFull\nReleased\nIn Transit\nReturned"
+  },
+  {
+   "fieldname": "allocated_at",
+   "fieldtype": "Datetime",
+   "label": "Allocated At"
+  },
+  {
+   "fieldname": "released_by",
+   "fieldtype": "Link",
+   "label": "Released By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "released_at",
+   "fieldtype": "Datetime",
+   "label": "Released At"
+  },
+  {
+   "fieldname": "truck",
+   "fieldtype": "Link",
+   "label": "Truck",
+   "options": "Vehicle"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-06 06:41:36.532278",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Crate Allocation",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

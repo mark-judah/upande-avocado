@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:line_name",
+ "creation": "2026-05-06 05:52:33.770942",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "line_name",
+  "status",
+  "current_size",
+  "current_grn",
+  "assigned_by",
+  "assigned_at",
+  "packed_kg"
+ ],
+ "fields": [
+  {
+   "fieldname": "line_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Line Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Idle",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nIdle"
+  },
+  {
+   "fieldname": "current_size",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Current Size"
+  },
+  {
+   "fieldname": "current_grn",
+   "fieldtype": "Data",
+   "label": "Current GRN"
+  },
+  {
+   "fieldname": "assigned_by",
+   "fieldtype": "Link",
+   "label": "Assigned By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "assigned_at",
+   "fieldtype": "Datetime",
+   "label": "Assigned At"
+  },
+  {
+   "default": "0",
+   "fieldname": "packed_kg",
+   "fieldtype": "Float",
+   "label": "Packed (kg)"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-06 05:52:33.770942",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Packing Line",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "line_name",
+ "sort_order": "ASC",
+ "states": []
+}

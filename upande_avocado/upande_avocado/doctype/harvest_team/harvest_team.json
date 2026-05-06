@@ -1,0 +1,133 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:HT-{#####}",
+ "creation": "2026-05-06 05:48:22.286556",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "team_number",
+  "team_leader",
+  "number_of_people",
+  "section",
+  "block",
+  "harvestors"
+ ],
+ "fields": [
+  {
+   "fieldname": "team_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Team Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "team_leader",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Team Leader",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "number_of_people",
+   "fieldtype": "Float",
+   "label": "Number of people"
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "block",
+   "fieldtype": "Table MultiSelect",
+   "label": "Block",
+   "options": "Work Section Multiselect"
+  },
+  {
+   "fieldname": "harvestors",
+   "fieldtype": "Table",
+   "label": "Harvestors",
+   "options": "Harvest Team Member"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-06 05:48:22.286556",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Harvest Team",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CEO",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

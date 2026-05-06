@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:batch_id",
+ "creation": "2026-05-06 05:44:07.534084",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "batch_id",
+  "team_id",
+  "farm_code",
+  "block",
+  "section",
+  "delivery_note",
+  "status",
+  "total_incoming_kg",
+  "total_reject_kg",
+  "export_kg",
+  "grn_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "batch_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Batch ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "team_id",
+   "fieldtype": "Data",
+   "label": "Team"
+  },
+  {
+   "fieldname": "farm_code",
+   "fieldtype": "Data",
+   "label": "Farm Code"
+  },
+  {
+   "fieldname": "block",
+   "fieldtype": "Data",
+   "label": "Block"
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Data",
+   "label": "Section"
+  },
+  {
+   "fieldname": "delivery_note",
+   "fieldtype": "Data",
+   "label": "Delivery Note"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nIn Transit\nReceived\nClosed"
+  },
+  {
+   "fieldname": "total_incoming_kg",
+   "fieldtype": "Float",
+   "label": "Total Incoming (kg)"
+  },
+  {
+   "fieldname": "total_reject_kg",
+   "fieldtype": "Float",
+   "label": "Total Rejects (kg)"
+  },
+  {
+   "fieldname": "export_kg",
+   "fieldtype": "Float",
+   "label": "Exports (kg)"
+  },
+  {
+   "fieldname": "grn_number",
+   "fieldtype": "Data",
+   "label": "GRN Number"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-06 05:44:07.534084",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Harvest Batch",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

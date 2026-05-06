@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CDN-{#####}",
+ "creation": "2026-05-06 05:59:13.556166",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "created_at",
+  "created_by_user",
+  "total_crates",
+  "total_blocks",
+  "total_dns",
+  "block_breakdown_json",
+  "grn_number",
+  "delivery_notes",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "created_at",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Created At"
+  },
+  {
+   "fieldname": "created_by_user",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "User"
+  },
+  {
+   "fieldname": "total_crates",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Crates"
+  },
+  {
+   "fieldname": "total_blocks",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Distinct Blocks"
+  },
+  {
+   "fieldname": "total_dns",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Distinct DNs"
+  },
+  {
+   "fieldname": "block_breakdown_json",
+   "fieldtype": "Long Text",
+   "label": "Aggregate Block Breakdown (JSON)"
+  },
+  {
+   "fieldname": "grn_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "GRN"
+  },
+  {
+   "fieldname": "delivery_notes",
+   "fieldtype": "Table",
+   "label": "Delivery Notes",
+   "options": "Avocado Consolidated DN Item"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-06 05:59:13.556166",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Avocado Consolidated Delivery Note",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
