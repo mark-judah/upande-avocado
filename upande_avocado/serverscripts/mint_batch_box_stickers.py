@@ -113,7 +113,10 @@ def _mint_per_size(batch_id, export_kg, box_sizes):
 		sticker_doc.insert(ignore_permissions=True)
 		sticker_doc.submit()
 
-		ids = [s.strip() for s in (sticker_doc.created_ids or "").splitlines() if s.strip()]
+		# Pull the IDs the Before-Submit hook generated. Try the in-memory doc
+		# first; fall back to the DB row; last resort, query the Box records
+		# the hook just created.
+		ids = _extract_created_ids(sticker_doc, bw)
 		for box_id in ids:
 			entries.append({
 				"box_id": box_id,
@@ -164,6 +167,43 @@ def _render_html(batch_id, entries):
 			f'</div>'
 		)
 	return f"<html><head><style>{css}</style></head><body>{''.join(blocks)}</body></html>"
+
+
+def _extract_created_ids(sticker_doc, box_weight_kg):
+	"""Return the Box IDs minted by the Before-Submit hook on this Avocado
+	Stickers doc. Tries three sources in order:
+
+	1. `sticker_doc.created_ids` in memory (works if hook writes propagated).
+	2. DB read of the same field (works if hook persisted the value).
+	3. Query Box records minted on/after `sticker_doc.creation` for this
+	   box_weight_kg, ordered by serial_no — the hook always inserts these.
+	"""
+	# 1) in-memory
+	created_str = sticker_doc.get("created_ids") or ""
+	ids = [s.strip() for s in created_str.splitlines() if s.strip()]
+	if ids:
+		return ids
+
+	# 2) DB
+	try:
+		sticker_doc.reload()
+		created_str = sticker_doc.get("created_ids") or ""
+		ids = [s.strip() for s in created_str.splitlines() if s.strip()]
+		if ids:
+			return ids
+	except Exception:
+		pass
+
+	# 3) Direct query on the Box doctype
+	created_at = sticker_doc.get("creation") or now_datetime()
+	rows = frappe.db.sql(
+		"""SELECT box_id FROM `tabBox`
+		   WHERE box_weight_kg = %s AND creation >= %s
+		   ORDER BY serial_no""",
+		(box_weight_kg, created_at),
+		as_dict=True,
+	)
+	return [r["box_id"] for r in rows if r.get("box_id")]
 
 
 def _attach_pdf(batch_id, pdf_bytes):

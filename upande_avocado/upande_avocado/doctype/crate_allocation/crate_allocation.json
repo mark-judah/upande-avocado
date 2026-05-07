@@ -59,7 +59,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "In Field\nFilling\nFull\nReleased\nIn Transit\nReturned"
+   "options": "In Field\nFilling\nFull\nReady for Collection\nReleased\nIn Transit\nReceived\nReturned"
   },
   {
    "fieldname": "allocated_at",
@@ -87,7 +87,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-06 06:41:36.532278",
+ "modified": "2026-05-07 07:26:43.078445",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
  "name": "Crate Allocation",
