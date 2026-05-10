@@ -1,0 +1,199 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:company_display_name",
+ "creation": "2026-05-10 22:53:20.129046",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "exporter_section",
+  "company_display_name",
+  "incorporated_in",
+  "pin_no",
+  "vat_no",
+  "exporter_code",
+  "customs_no",
+  "col_break_1",
+  "po_box",
+  "city",
+  "country",
+  "phone",
+  "email",
+  "certifications_section",
+  "affa_hcd_license",
+  "certification_status",
+  "ggn",
+  "col_break_2",
+  "authorized_by",
+  "customer_section",
+  "customer_vat_field",
+  "customer_eori_field",
+  "shipment_defaults_section",
+  "default_customs_tariff",
+  "default_place_of_receipt",
+  "col_break_3",
+  "default_port_of_loading",
+  "default_port_of_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "exporter_section",
+   "fieldtype": "Section Break",
+   "label": "Exporter Identity"
+  },
+  {
+   "fieldname": "company_display_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company Display Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "incorporated_in",
+   "fieldtype": "Data",
+   "label": "Incorporated In"
+  },
+  {
+   "fieldname": "pin_no",
+   "fieldtype": "Data",
+   "label": "PIN No"
+  },
+  {
+   "fieldname": "vat_no",
+   "fieldtype": "Data",
+   "label": "VAT No"
+  },
+  {
+   "fieldname": "exporter_code",
+   "fieldtype": "Data",
+   "label": "Exporter Code No"
+  },
+  {
+   "fieldname": "customs_no",
+   "fieldtype": "Data",
+   "label": "Customs No"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "po_box",
+   "fieldtype": "Data",
+   "label": "P.O. Box"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "certifications_section",
+   "fieldtype": "Section Break",
+   "label": "Certifications & Licenses"
+  },
+  {
+   "fieldname": "affa_hcd_license",
+   "fieldtype": "Data",
+   "label": "AFFA HCD Export License No"
+  },
+  {
+   "fieldname": "certification_status",
+   "fieldtype": "Data",
+   "label": "Certification Status"
+  },
+  {
+   "fieldname": "ggn",
+   "fieldtype": "Data",
+   "label": "GGN"
+  },
+  {
+   "fieldname": "col_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "authorized_by",
+   "fieldtype": "Data",
+   "label": "Authorized By (Print)"
+  },
+  {
+   "fieldname": "customer_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Fields"
+  },
+  {
+   "default": "custom_vat_no",
+   "fieldname": "customer_vat_field",
+   "fieldtype": "Data",
+   "label": "Customer VAT Fieldname"
+  },
+  {
+   "default": "custom_eori_no",
+   "fieldname": "customer_eori_field",
+   "fieldtype": "Data",
+   "label": "Customer EORI Fieldname"
+  },
+  {
+   "fieldname": "shipment_defaults_section",
+   "fieldtype": "Section Break",
+   "label": "Shipment Defaults"
+  },
+  {
+   "default": "0804.40.00",
+   "fieldname": "default_customs_tariff",
+   "fieldtype": "Data",
+   "label": "Default Customs Tariff No"
+  },
+  {
+   "fieldname": "default_place_of_receipt",
+   "fieldtype": "Data",
+   "label": "Default Place of Receipt"
+  },
+  {
+   "fieldname": "col_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_port_of_loading",
+   "fieldtype": "Data",
+   "label": "Default Port of Loading"
+  },
+  {
+   "fieldname": "default_port_of_entry",
+   "fieldtype": "Data",
+   "label": "Default Port of Entry"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-10 22:53:20.129046",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Avocado Export Settings",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

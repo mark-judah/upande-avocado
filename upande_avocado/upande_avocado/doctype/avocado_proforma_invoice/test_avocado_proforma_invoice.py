@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestFieldLoadingRecord(FrappeTestCase):
+class TestAvocadoProformaInvoice(FrappeTestCase):
 	pass

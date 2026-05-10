@@ -1,0 +1,125 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:consignee_name",
+ "creation": "2026-05-10 22:55:18.601959",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "consignee_name",
+  "customer",
+  "country",
+  "col_break_1",
+  "vat_no",
+  "eori_no",
+  "address_section",
+  "full_address",
+  "notify_section",
+  "notify_name",
+  "notify_address"
+ ],
+ "fields": [
+  {
+   "fieldname": "consignee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Consignee Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vat_no",
+   "fieldtype": "Data",
+   "label": "VAT No"
+  },
+  {
+   "fieldname": "eori_no",
+   "fieldtype": "Data",
+   "label": "EORI No"
+  },
+  {
+   "fieldname": "address_section",
+   "fieldtype": "Section Break",
+   "label": "Consignee Address"
+  },
+  {
+   "fieldname": "full_address",
+   "fieldtype": "Text",
+   "label": "Full Address (for Invoice)"
+  },
+  {
+   "fieldname": "notify_section",
+   "fieldtype": "Section Break",
+   "label": "Notify Party"
+  },
+  {
+   "fieldname": "notify_name",
+   "fieldtype": "Data",
+   "label": "Notify Party Name"
+  },
+  {
+   "fieldname": "notify_address",
+   "fieldtype": "Text",
+   "label": "Notify Party Address"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-10 22:55:18.601959",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Avocado Consignee",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

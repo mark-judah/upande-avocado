@@ -2,12 +2,12 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:QI-{#####}",
- "creation": "2026-05-06 06:44:17.329299",
+ "creation": "2026-05-10 22:51:23.958175",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "batch_id",
+  "harvest_delivery_note",
   "crate_id",
   "grn",
   "inspector",
@@ -24,11 +24,11 @@
  ],
  "fields": [
   {
-   "fieldname": "batch_id",
+   "fieldname": "harvest_delivery_note",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Batch",
-   "options": "Harvest Batch",
+   "label": "Harvest Delivery Note",
+   "options": "Harvest Delivery Note",
    "reqd": 1
   },
   {
@@ -111,7 +111,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-06 06:44:17.329299",
+ "modified": "2026-05-10 22:51:23.958175",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
  "name": "Avocado Quality Inspection",

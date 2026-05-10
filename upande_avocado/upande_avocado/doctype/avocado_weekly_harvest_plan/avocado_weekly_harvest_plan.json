@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:AWHP-{year}-W{week_number}-{farm}",
+ "creation": "2026-05-10 22:39:09.309453",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "farm",
+  "year",
+  "week_number",
+  "week_start_date",
+  "status",
+  "days",
+  "total_target",
+  "total_man_days",
+  "notes",
+  "approved_by",
+  "approved_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Farm",
+   "options": "Farm",
+   "reqd": 1
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "week_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Week Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "week_start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Week Start (Mon)"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nActive\nClosed"
+  },
+  {
+   "fieldname": "days",
+   "fieldtype": "Table",
+   "label": "Days",
+   "options": "Avocado Harvest Plan Day"
+  },
+  {
+   "fieldname": "total_target",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Target Crates",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_man_days",
+   "fieldtype": "Float",
+   "label": "Total Man Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Long Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_at",
+   "fieldtype": "Datetime",
+   "label": "Approved At",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-10 22:39:09.309453",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Avocado Weekly Harvest Plan",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

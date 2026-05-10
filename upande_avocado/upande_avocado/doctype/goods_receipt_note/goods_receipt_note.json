@@ -2,14 +2,15 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:grn_number",
- "creation": "2026-05-06 06:43:29.782107",
+ "creation": "2026-05-10 22:42:45.416282",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "grn_number",
-  "batch_id",
-  "delivery_note",
+  "harvest_delivery_note",
+  "field_collection",
+  "consolidated_delivery_note",
   "vehicle",
   "farm",
   "block",
@@ -28,17 +29,23 @@
    "unique": 1
   },
   {
-   "fieldname": "batch_id",
+   "fieldname": "harvest_delivery_note",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Batch",
-   "options": "Harvest Batch"
+   "label": "Harvest Delivery Note",
+   "options": "Harvest Delivery Note"
   },
   {
-   "fieldname": "delivery_note",
+   "fieldname": "field_collection",
    "fieldtype": "Link",
-   "label": "Delivery Note",
-   "options": "Field Loading Record"
+   "label": "Field Collection",
+   "options": "Field Collection"
+  },
+  {
+   "fieldname": "consolidated_delivery_note",
+   "fieldtype": "Link",
+   "label": "Consolidated Delivery Note",
+   "options": "Avocado Consolidated Delivery Note"
   },
   {
    "fieldname": "vehicle",
@@ -85,7 +92,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-06 06:43:29.782107",
+ "modified": "2026-05-10 22:42:45.416282",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
  "name": "Goods Receipt Note",

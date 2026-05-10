@@ -2,12 +2,12 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:FLR-{#####}",
- "creation": "2026-05-06 05:50:12.323779",
+ "creation": "2026-05-10 22:41:11.721162",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "batch_id",
+  "harvest_delivery_note",
   "team_id",
   "truck",
   "supervisor",
@@ -18,11 +18,11 @@
  ],
  "fields": [
   {
-   "fieldname": "batch_id",
+   "fieldname": "harvest_delivery_note",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Batch",
-   "options": "Harvest Batch"
+   "label": "Harvest Delivery Note",
+   "options": "Harvest Delivery Note"
   },
   {
    "fieldname": "team_id",
@@ -69,10 +69,10 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-06 05:50:12.323779",
+ "modified": "2026-05-10 22:41:11.721162",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
- "name": "Field Loading Record",
+ "name": "Field Collection",
  "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [

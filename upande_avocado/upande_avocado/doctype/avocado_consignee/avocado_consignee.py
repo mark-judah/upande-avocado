@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class FieldLoadingRecord(Document):
+class AvocadoConsignee(Document):
 	pass

@@ -2,13 +2,13 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:INTAKE-{#####}",
- "creation": "2026-05-06 05:51:20.825975",
+ "creation": "2026-05-10 22:42:00.322295",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "delivery_note",
-  "batch_id",
+  "field_collection",
+  "harvest_delivery_note",
   "vehicle",
   "crate_count_dn",
   "received_by",
@@ -18,17 +18,17 @@
  ],
  "fields": [
   {
-   "fieldname": "delivery_note",
+   "fieldname": "field_collection",
    "fieldtype": "Link",
-   "label": "Delivery Note",
-   "options": "Field Loading Record"
+   "label": "Field Collection",
+   "options": "Field Collection"
   },
   {
-   "fieldname": "batch_id",
+   "fieldname": "harvest_delivery_note",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Batch",
-   "options": "Harvest Batch"
+   "label": "Harvest Delivery Note",
+   "options": "Harvest Delivery Note"
   },
   {
    "fieldname": "vehicle",
@@ -70,7 +70,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-06 05:51:20.825975",
+ "modified": "2026-05-10 22:42:00.322295",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
  "name": "Intake Receipt",

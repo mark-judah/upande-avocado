@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:ATL-{#####}",
+ "creation": "2026-05-10 22:41:16.853891",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "truck",
+  "target_crate_count",
+  "crate_count",
+  "status",
+  "started_by",
+  "started_at",
+  "finalized_by",
+  "finalized_at",
+  "field_collection",
+  "harvest_delivery_note"
+ ],
+ "fields": [
+  {
+   "fieldname": "truck",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Truck",
+   "options": "Vehicle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "target_crate_count",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Target Crate Count",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "crate_count",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Crate Count",
+   "read_only": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Open\nFinalized\nCancelled"
+  },
+  {
+   "fieldname": "started_by",
+   "fieldtype": "Link",
+   "label": "Started By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "label": "Started At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "finalized_by",
+   "fieldtype": "Link",
+   "label": "Finalized By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "finalized_at",
+   "fieldtype": "Datetime",
+   "label": "Finalized At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "field_collection",
+   "fieldtype": "Link",
+   "label": "Field Collection",
+   "options": "Field Collection",
+   "read_only": 1
+  },
+  {
+   "fieldname": "harvest_delivery_note",
+   "fieldtype": "Link",
+   "label": "Harvest Delivery Note",
+   "options": "Harvest Delivery Note",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-10 22:41:16.853891",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Avocado Truck Load",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Loading Clerk",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

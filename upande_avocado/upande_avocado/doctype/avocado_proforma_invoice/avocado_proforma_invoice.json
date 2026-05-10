@@ -1,0 +1,444 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2026-05-10 22:56:34.197074",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "export_settings",
+  "settings_preview_section",
+  "exporter_name_display",
+  "exporter_pin_display",
+  "col_break_settings_1",
+  "exporter_customs_display",
+  "exporter_hcd_display",
+  "invoice_details_section",
+  "invoice_no",
+  "invoice_date",
+  "col_break_1",
+  "customs_tariff_no",
+  "sa_lf_ref_nos",
+  "consignee_section",
+  "customer",
+  "avo_consignee",
+  "consignee",
+  "consignee_address",
+  "consignee_vat",
+  "consignee_eori",
+  "notify_name",
+  "notify_address",
+  "col_break_2",
+  "shipping_line",
+  "ship_name",
+  "voyage_no",
+  "eur1_no",
+  "phytosanitary_no",
+  "booking_no",
+  "etd_msa",
+  "eta_pod",
+  "shipment_section",
+  "container_type",
+  "container_no",
+  "place_of_receipt",
+  "col_break_3",
+  "port_of_loading",
+  "port_of_entry",
+  "items_section",
+  "items",
+  "totals_section",
+  "total_cartons",
+  "net_kgs",
+  "gross_kgs",
+  "col_break_4",
+  "total_fob",
+  "freight_value",
+  "insurance_cost",
+  "total_value",
+  "total_value_in_words",
+  "amended_from",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "HL-.YYYY.-.###."
+  },
+  {
+   "fieldname": "export_settings",
+   "fieldtype": "Link",
+   "label": "Export Settings",
+   "options": "Avocado Export Settings"
+  },
+  {
+   "collapsible": 1,
+   "description": "Autofilled from Export Settings",
+   "fieldname": "settings_preview_section",
+   "fieldtype": "Section Break",
+   "label": "Exporter Details"
+  },
+  {
+   "fieldname": "exporter_name_display",
+   "fieldtype": "Data",
+   "label": "Exporter Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "exporter_pin_display",
+   "fieldtype": "Data",
+   "label": "PIN No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_settings_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exporter_customs_display",
+   "fieldtype": "Data",
+   "label": "Customs No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "exporter_hcd_display",
+   "fieldtype": "Data",
+   "label": "AFFA HCD License",
+   "read_only": 1
+  },
+  {
+   "fieldname": "invoice_details_section",
+   "fieldtype": "Section Break",
+   "label": "Invoice Details"
+  },
+  {
+   "fieldname": "invoice_no",
+   "fieldtype": "Data",
+   "label": "Invoice No"
+  },
+  {
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Invoice Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0804.40.00",
+   "fieldname": "customs_tariff_no",
+   "fieldtype": "Data",
+   "label": "Customs Tariff No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sa_lf_ref_nos",
+   "fieldtype": "Data",
+   "label": "SA & LF Ref Nos"
+  },
+  {
+   "fieldname": "consignee_section",
+   "fieldtype": "Section Break",
+   "label": "Consignee"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "avo_consignee",
+   "fieldtype": "Link",
+   "label": "Consignee",
+   "options": "Avocado Consignee"
+  },
+  {
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Consignee (Legacy)",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "consignee_address",
+   "fieldtype": "Text",
+   "label": "Consignee Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "consignee_vat",
+   "fieldtype": "Data",
+   "label": "Consignee VAT No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "consignee_eori",
+   "fieldtype": "Data",
+   "label": "Consignee EORI No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notify_name",
+   "fieldtype": "Data",
+   "label": "Notify Party",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notify_address",
+   "fieldtype": "Text",
+   "label": "Notify Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_line",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shipping Line",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ship_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ship Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "voyage_no",
+   "fieldtype": "Data",
+   "label": "Voyage No",
+   "reqd": 1
+  },
+  {
+   "default": "TBA",
+   "fieldname": "eur1_no",
+   "fieldtype": "Data",
+   "label": "EUR.1 No"
+  },
+  {
+   "default": "TBA",
+   "fieldname": "phytosanitary_no",
+   "fieldtype": "Data",
+   "label": "Phytosanitary No"
+  },
+  {
+   "fieldname": "booking_no",
+   "fieldtype": "Data",
+   "label": "Booking No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "etd_msa",
+   "fieldtype": "Date",
+   "label": "ETD MSA"
+  },
+  {
+   "fieldname": "eta_pod",
+   "fieldtype": "Date",
+   "label": "ETA POD"
+  },
+  {
+   "fieldname": "shipment_section",
+   "fieldtype": "Section Break",
+   "label": "Shipment Details"
+  },
+  {
+   "default": "1*40FCLS",
+   "fieldname": "container_type",
+   "fieldtype": "Select",
+   "label": "Container Type",
+   "options": "1*40FCLS\n1*20FCLS\n2*20FCLS"
+  },
+  {
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "label": "Container No (CT.NO)",
+   "reqd": 1
+  },
+  {
+   "default": "Kitale",
+   "fieldname": "place_of_receipt",
+   "fieldtype": "Data",
+   "label": "Place of Receipt",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Mombasa",
+   "fieldname": "port_of_loading",
+   "fieldtype": "Data",
+   "label": "Port of Loading",
+   "read_only": 1
+  },
+  {
+   "default": "Rotterdam",
+   "fieldname": "port_of_entry",
+   "fieldtype": "Data",
+   "label": "Port of Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Avocado Proforma Invoice Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "totals_section",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "total_cartons",
+   "fieldtype": "Int",
+   "label": "Total Cartons",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_kgs",
+   "fieldtype": "Float",
+   "label": "Net Kgs"
+  },
+  {
+   "fieldname": "gross_kgs",
+   "fieldtype": "Float",
+   "label": "Gross Kgs"
+  },
+  {
+   "fieldname": "col_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_fob",
+   "fieldtype": "Currency",
+   "label": "Total FOB (\u20ac)",
+   "options": "EUR",
+   "read_only": 1
+  },
+  {
+   "fieldname": "freight_value",
+   "fieldtype": "Currency",
+   "label": "Freight Value (\u20ac)",
+   "options": "EUR"
+  },
+  {
+   "fieldname": "insurance_cost",
+   "fieldtype": "Currency",
+   "label": "Insurance Cost (\u20ac)",
+   "options": "EUR"
+  },
+  {
+   "fieldname": "total_value",
+   "fieldtype": "Currency",
+   "label": "TOTAL VALUE (\u20ac)",
+   "options": "EUR",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_value_in_words",
+   "fieldtype": "Data",
+   "label": "Total Value in Words",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Avocado Proforma Invoice",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Avocado Proforma Invoice",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-05-10 22:56:34.197074",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Avocado Proforma Invoice",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

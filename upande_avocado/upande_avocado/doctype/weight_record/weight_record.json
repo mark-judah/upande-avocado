@@ -2,12 +2,12 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:WR-{#####}",
- "creation": "2026-05-06 05:52:12.800949",
+ "creation": "2026-05-10 22:49:56.283488",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "batch_id",
+  "harvest_delivery_note",
   "grn_number",
   "record_type",
   "reference_id",
@@ -18,11 +18,11 @@
  ],
  "fields": [
   {
-   "fieldname": "batch_id",
+   "fieldname": "harvest_delivery_note",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Batch",
-   "options": "Harvest Batch",
+   "label": "Harvest Delivery Note",
+   "options": "Harvest Delivery Note",
    "reqd": 1
   },
   {
@@ -72,7 +72,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-06 05:52:12.800949",
+ "modified": "2026-05-10 22:49:56.283488",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
  "name": "Weight Record",

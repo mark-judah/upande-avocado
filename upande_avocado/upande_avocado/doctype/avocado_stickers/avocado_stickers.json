@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:STICKER-{YYYY}-{#####}",
- "creation": "2026-05-06 06:42:46.722990",
+ "creation": "2026-05-10 23:06:51.778870",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -13,17 +13,20 @@
   "prefix",
   "farm",
   "cold_room",
+  "box_weight_kg",
   "notes",
   "section_break_results",
   "created_count",
   "first_id",
   "last_id",
-  "created_ids"
+  "created_ids",
+  "amended_from",
+  "amended_from"
  ],
  "fields": [
   {
    "default": "Pallet",
-   "description": "Pick what you're minting. Bay requires a Cold Room; Crate accepts an optional Farm.",
+   "description": "Pick what you're minting. Bay requires a Cold Room; Crate accepts an optional Farm; Box requires a Box Weight (kg).",
    "fieldname": "sticker_type",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -33,7 +36,7 @@
   },
   {
    "default": "20",
-   "description": "How many stickers to mint. Max 2000 (Crate/Pallet) or 500 (Bay).",
+   "description": "How many stickers to mint. Max 2000 (Crate/Pallet/Box) or 500 (Bay).",
    "fieldname": "count",
    "fieldtype": "Int",
    "in_list_view": 1,
@@ -45,7 +48,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "description": "Override default prefix. Defaults: Crate=&lt;FARM-ABBR&gt;-CR or CR \u00b7 Pallet=PAL \u00b7 Bay=BAY.",
+   "description": "Override default prefix. Defaults: Crate=&lt;FARM-ABBR&gt;-CR or CR \u00b7 Pallet=PAL \u00b7 Bay=BAY \u00b7 Box=BOX-&lt;kg&gt;.",
    "fieldname": "prefix",
    "fieldtype": "Data",
    "label": "Prefix (optional)"
@@ -65,6 +68,13 @@
    "label": "Cold Room (Bay only)",
    "mandatory_depends_on": "eval:doc.sticker_type=='Bay'",
    "options": "Warehouse"
+  },
+  {
+   "depends_on": "eval:doc.sticker_type=='Box'",
+   "description": "Nominal box weight class (e.g. 4 for 4kg boxes, 10 for 10kg). Should match a row in Sticker Calculation Settings.",
+   "fieldname": "box_weight_kg",
+   "fieldtype": "Float",
+   "label": "Box Weight (kg)"
   },
   {
    "fieldname": "notes",
@@ -103,13 +113,33 @@
    "fieldtype": "Small Text",
    "label": "Created IDs",
    "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Avocado Stickers",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Avocado Stickers",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-05-06 07:26:00.335961",
+ "modified": "2026-05-10 23:06:51.778870",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
  "name": "Avocado Stickers",

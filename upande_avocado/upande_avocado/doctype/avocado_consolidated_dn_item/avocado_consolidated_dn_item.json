@@ -1,13 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2026-05-06 05:44:30.874774",
+ "creation": "2026-05-10 22:35:16.281271",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "delivery_note",
-  "batch_id",
+  "harvest_delivery_note",
   "crate_count",
   "primary_block",
   "block_breakdown_json"
@@ -23,11 +23,11 @@
   },
   {
    "columns": 3,
-   "fieldname": "batch_id",
+   "fieldname": "harvest_delivery_note",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Harvest Batch",
-   "options": "Harvest Batch"
+   "label": "Harvest Delivery Note",
+   "options": "Harvest Delivery Note"
   },
   {
    "columns": 1,
@@ -54,7 +54,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-05-06 05:44:30.874774",
+ "modified": "2026-05-10 22:35:16.281271",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
  "name": "Avocado Consolidated DN Item",

@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:CALLOC-{#####}",
- "creation": "2026-05-06 06:41:36.532278",
+ "creation": "2026-05-10 23:05:01.871263",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -51,7 +51,7 @@
    "fieldname": "batch_id_ref",
    "fieldtype": "Link",
    "label": "Batch (ref)",
-   "options": "Harvest Batch"
+   "options": "Harvest Delivery Note"
   },
   {
    "default": "In Field",
@@ -87,7 +87,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-07 07:26:43.078445",
+ "modified": "2026-05-10 23:05:01.871263",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
  "name": "Crate Allocation",
