@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:CALLOC-{#####}",
- "creation": "2026-05-11 01:53:31.959835",
+ "creation": "2026-05-11 02:31:59.494165",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -17,11 +17,12 @@
   "allocated_at",
   "released_by",
   "released_at",
-  "truck"
+  "truck",
+  "truck_load",
+  "loaded_by"
  ],
  "fields": [
   {
-   "description": "Link to Crate master (the QR-encoded ID).",
    "fieldname": "crate_id",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -83,12 +84,24 @@
    "fieldtype": "Link",
    "label": "Truck",
    "options": "Vehicle"
+  },
+  {
+   "fieldname": "truck_load",
+   "fieldtype": "Link",
+   "label": "Truck Load",
+   "options": "Avocado Truck Load"
+  },
+  {
+   "fieldname": "loaded_by",
+   "fieldtype": "Link",
+   "label": "Loaded By",
+   "options": "User"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-11 01:53:31.959835",
+ "modified": "2026-05-11 02:31:59.494165",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
  "name": "Crate Allocation",
