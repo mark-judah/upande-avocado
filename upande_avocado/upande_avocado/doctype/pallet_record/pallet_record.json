@@ -1,26 +1,45 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:pallet_id",
- "creation": "2026-05-10 22:47:24.676456",
+ "creation": "2026-05-14 18:25:38.736929",
+ "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "pallet_id",
   "serial_no",
+  "grower",
+  "cultivar",
+  "sb_links",
   "harvest_delivery_note",
   "grn_number",
+  "packing_code",
   "line_id",
+  "sb_carton",
   "size",
+  "carton_type",
   "box_count",
   "net_weight_kg",
   "gross_weight_kg",
+  "sb_status",
   "status",
+  "receiver",
+  "dry_matter_pct",
+  "smartfresh_rate",
+  "sb_shipping",
+  "booking_ref",
+  "container_ref",
+  "loading_position",
+  "invoice_no",
+  "sb_packing",
   "packed_by",
   "packed_at",
+  "pallet_date",
+  "sb_storage",
   "cold_room",
-  "bay",
   "placed_at"
  ],
  "fields": [
@@ -28,6 +47,7 @@
    "fieldname": "pallet_id",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Pallet ID",
    "reqd": 1,
    "unique": 1
@@ -35,20 +55,43 @@
   {
    "fieldname": "serial_no",
    "fieldtype": "Int",
-   "in_list_view": 1,
    "label": "Serial No"
+  },
+  {
+   "default": "Lokitela",
+   "description": "Grower from the pallet ledger.",
+   "fieldname": "grower",
+   "fieldtype": "Data",
+   "label": "Grower"
+  },
+  {
+   "default": "Hass",
+   "description": "Cultivar variety from the pallet ledger.",
+   "fieldname": "cultivar",
+   "fieldtype": "Data",
+   "label": "Cultivar"
+  },
+  {
+   "fieldname": "sb_links",
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "harvest_delivery_note",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Harvest Delivery Note",
    "options": "Harvest Delivery Note"
   },
   {
    "fieldname": "grn_number",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "GRN"
+  },
+  {
+   "description": "Packing code from the pallet ledger (e.g., LA10520319). Distinct from grn_number which holds the structured GRN.",
+   "fieldname": "packing_code",
+   "fieldtype": "Data",
+   "label": "Packing Code"
   },
   {
    "fieldname": "line_id",
@@ -57,10 +100,23 @@
    "options": "Packing Line"
   },
   {
+   "fieldname": "sb_carton",
+   "fieldtype": "Section Break",
+   "label": "Carton"
+  },
+  {
    "fieldname": "size",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Size"
+  },
+  {
+   "default": "4kg",
+   "description": "Carton format on this pallet: 4kg (sizes 12-24) or 10kg (sizes 22+, 24+, 26, 28, 30, 32+).",
+   "fieldname": "carton_type",
+   "fieldtype": "Select",
+   "label": "Carton Type",
+   "options": "\n4kg\n10kg"
   },
   {
    "fieldname": "box_count",
@@ -79,12 +135,71 @@
    "label": "Gross Weight (kg)"
   },
   {
+   "fieldname": "sb_status",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
    "default": "Available",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
    "options": "Available\nOpen\nClosed\nIn Storage\nDispatched\nLost\nRetired"
+  },
+  {
+   "fieldname": "receiver",
+   "fieldtype": "Select",
+   "label": "Receiver",
+   "options": "\nHalls BV\nHalls - Rungis\nHalls - Marseille"
+  },
+  {
+   "description": "Dry matter % at time of packing \u2014 determines SmartFresh rate",
+   "fieldname": "dry_matter_pct",
+   "fieldtype": "Float",
+   "label": "DM %"
+  },
+  {
+   "description": "Auto-computed from DM%: SF 50% (23-26.9%), SF 75% (27-29.9%), SF 100% (30%+)",
+   "fieldname": "smartfresh_rate",
+   "fieldtype": "Select",
+   "label": "SmartFresh Rate",
+   "options": "\nSF 50%\nSF 75%\nSF 100%\nNot Applicable"
+  },
+  {
+   "fieldname": "sb_shipping",
+   "fieldtype": "Section Break",
+   "label": "Shipping"
+  },
+  {
+   "description": "Booking reference number for the shipping vessel",
+   "fieldname": "booking_ref",
+   "fieldtype": "Data",
+   "label": "Booking Ref"
+  },
+  {
+   "description": "Container this pallet is loaded into, e.g. CON-W20-01",
+   "fieldname": "container_ref",
+   "fieldtype": "Data",
+   "label": "Container Ref"
+  },
+  {
+   "description": "Position number in container manifest (1 = loaded first)",
+   "fieldname": "loading_position",
+   "fieldtype": "Int",
+   "label": "Loading Position"
+  },
+  {
+   "description": "Customer invoice number (e.g., LA10520319). Free-text reference from the pallet ledger.",
+   "fieldname": "invoice_no",
+   "fieldtype": "Data",
+   "label": "Invoice No"
+  },
+  {
+   "fieldname": "sb_packing",
+   "fieldtype": "Section Break",
+   "label": "Packing"
   },
   {
    "fieldname": "packed_by",
@@ -98,16 +213,21 @@
    "label": "Packed At"
   },
   {
+   "description": "Packing date from the pallet ledger (separate from system packed_at timestamp)",
+   "fieldname": "pallet_date",
+   "fieldtype": "Date",
+   "label": "Pallet Date"
+  },
+  {
+   "fieldname": "sb_storage",
+   "fieldtype": "Section Break",
+   "label": "Storage"
+  },
+  {
    "fieldname": "cold_room",
    "fieldtype": "Link",
    "label": "Cold Room (Warehouse)",
    "options": "Warehouse"
-  },
-  {
-   "fieldname": "bay",
-   "fieldtype": "Link",
-   "label": "Bay",
-   "options": "Bay"
   },
   {
    "fieldname": "placed_at",
@@ -118,7 +238,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-10 22:47:24.676456",
+ "modified": "2026-05-14 18:25:38.736929",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
  "name": "Pallet Record",
@@ -130,6 +250,7 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,
@@ -140,8 +261,8 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "sort_field": "pallet_id",
- "sort_order": "ASC",
+ "sort_field": "modified",
+ "sort_order": "DESC",
  "states": [],
  "title_field": "pallet_id",
  "track_changes": 1
