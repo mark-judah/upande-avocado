@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-05-15 07:27:11.384442",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "active_grn",
+  "set_at",
+  "set_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "active_grn",
+   "fieldtype": "Data",
+   "label": "Active GRN"
+  },
+  {
+   "fieldname": "set_at",
+   "fieldtype": "Datetime",
+   "label": "Set At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "set_by",
+   "fieldtype": "Link",
+   "label": "Set By",
+   "options": "User",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-05-15 07:27:11.384442",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Avocado Packhouse Session",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

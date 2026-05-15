@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-05-15 07:28:26.205118",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pallet",
+  "warehouse",
+  "count_size",
+  "cartons",
+  "net_weight_kg",
+  "packing_code",
+  "consignee",
+  "selected",
+  "consignee_name",
+  "allocated_at",
+  "allocated_by"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "pallet",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Pallet",
+   "options": "Pallet Record",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "warehouse",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "count_size",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Size",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "cartons",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Cartons",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "net_weight_kg",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Net (kg)",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "packing_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Packing Code / GRN",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Consignee",
+   "options": "Customer"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "selected",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Pick"
+  },
+  {
+   "fetch_from": "consignee.customer_name",
+   "fieldname": "consignee_name",
+   "fieldtype": "Data",
+   "label": "Consignee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "allocated_at",
+   "fieldtype": "Datetime",
+   "label": "Allocated At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "allocated_by",
+   "fieldtype": "Link",
+   "label": "Allocated By",
+   "options": "User",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-05-15 07:28:26.205118",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Pallet Allocation Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
