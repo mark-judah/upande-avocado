@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:CE-{YYYY}-{#####}",
+ "creation": "2026-05-17 19:42:33.067761",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "season_name",
+  "farm",
+  "col_break_1",
+  "harvest_year",
+  "harvest_number",
+  "section_defaults",
+  "fruits_per_crate",
+  "default_kg_per_crate",
+  "section_blocks",
+  "blocks"
+ ],
+ "fields": [
+  {
+   "fieldname": "season_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Season",
+   "reqd": 1
+  },
+  {
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Farm",
+   "options": "Farm",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "harvest_year",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Year"
+  },
+  {
+   "fieldname": "harvest_number",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Harvest No.",
+   "options": "1st\n2nd\n3rd\n4th\n5th"
+  },
+  {
+   "fieldname": "section_defaults",
+   "fieldtype": "Section Break",
+   "label": "Defaults"
+  },
+  {
+   "default": "81",
+   "description": "Bearing Trees x Avg Fruits / Fruits per Crate = Est. Crates",
+   "fieldname": "fruits_per_crate",
+   "fieldtype": "Int",
+   "label": "Fruits per Crate"
+  },
+  {
+   "default": "18",
+   "description": "Used for rows where Kg/Crate is not set",
+   "fieldname": "default_kg_per_crate",
+   "fieldtype": "Float",
+   "label": "Default Kg/Crate"
+  },
+  {
+   "fieldname": "section_blocks",
+   "fieldtype": "Section Break",
+   "label": "Block Estimates"
+  },
+  {
+   "fieldname": "blocks",
+   "fieldtype": "Table",
+   "label": "Blocks",
+   "options": "Crop Estimate Block"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-17 20:32:08.414403",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Crop Estimate",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "season_name"
+}

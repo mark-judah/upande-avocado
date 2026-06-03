@@ -4,5 +4,5 @@
 from frappe.model.document import Document
 
 
-class PalletAllocationItem(Document):
+class CropEstimateBlock(Document):
 	pass

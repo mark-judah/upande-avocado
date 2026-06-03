@@ -1,0 +1,786 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-05-17 19:42:35.624033",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "form_title",
+  "revision",
+  "cb_header_1",
+  "issue_date",
+  "status",
+  "sb_dm_grid",
+  "dm_smartfresh_tier",
+  "dm_pct_actual",
+  "cb_dm_1",
+  "phf_ref_no",
+  "smartfresh_ref_no",
+  "issued_by",
+  "proforma_invoice",
+  "sb_commercial",
+  "commercial_invoice_no",
+  "cb_commercial",
+  "shipping_booking_no",
+  "sb_shipment",
+  "importer",
+  "container_no",
+  "vessel_voy_ex_mombasa",
+  "vessel_voy_pod",
+  "shipping_line",
+  "cb_shipment",
+  "port_of_discharge",
+  "destination",
+  "etd_lokitela_orchards",
+  "etd_mombasa",
+  "eta_destination",
+  "sb_route",
+  "vessel_route",
+  "transhipment",
+  "cb_route",
+  "cultivar",
+  "ggn_no",
+  "sb_pti",
+  "pti_no_damage",
+  "pti_refrigeration_ok",
+  "cb_pti",
+  "pti_plugs_in_place",
+  "pti_container_cleaned",
+  "sb_pti_signoff",
+  "pti_inspector",
+  "cb_pti_signoff",
+  "pti_inspection_datetime",
+  "sb_logistics",
+  "genset_no",
+  "seal_no",
+  "cb_logistics",
+  "vehicle_no",
+  "trailer_no",
+  "sb_driver",
+  "driver_name",
+  "driver_id",
+  "cb_driver",
+  "driver_phone",
+  "transporter",
+  "departure_time",
+  "sb_manifest",
+  "pallets",
+  "sb_manifest_totals",
+  "total_pallets",
+  "total_cartons_4kg",
+  "cb_manifest_totals_1",
+  "total_cartons_10kg",
+  "total_cartons",
+  "cb_manifest_totals_2",
+  "total_net_kg",
+  "total_gross_kg",
+  "sb_ca",
+  "set_point",
+  "stepdown_1",
+  "stepdown_2",
+  "cb_ca",
+  "oxygen_pct",
+  "co2_pct",
+  "sb_signoff",
+  "exporter_company",
+  "exporter_name",
+  "exporter_signoff_datetime",
+  "cb_signoff_1",
+  "inland_transport_name",
+  "inland_transport_signoff_datetime",
+  "cb_signoff_2",
+  "shipping_line_name",
+  "shipping_line_rep",
+  "shipping_line_signoff_datetime",
+  "cb_signoff_3",
+  "loading_prepared_company",
+  "prepared_by",
+  "prepared_by_name",
+  "prepared_signoff_datetime",
+  "sb_extra_pi",
+  "exporter_pin",
+  "exporter_hcd",
+  "exporter_customs",
+  "cb_extra_pi_1",
+  "consignee_address",
+  "consignee_vat",
+  "consignee_eori",
+  "cb_extra_pi_2",
+  "phytosanitary_no",
+  "eur1_no",
+  "customs_tariff_no",
+  "total_fob",
+  "sb_notes",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "PHF-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PHF-.YYYY.-.####",
+   "reqd": 1
+  },
+  {
+   "default": "PHF 16 Shipping Announcement & Loading Report",
+   "fieldname": "form_title",
+   "fieldtype": "Data",
+   "label": "Form Title",
+   "read_only": 1
+  },
+  {
+   "default": "Revision 1",
+   "fieldname": "revision",
+   "fieldtype": "Data",
+   "label": "Revision"
+  },
+  {
+   "fieldname": "cb_header_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Issue Date",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nLoading\nSealed\nDeparted\nArrived Mombasa\nDelivered\nCancelled"
+  },
+  {
+   "fieldname": "sb_dm_grid",
+   "fieldtype": "Section Break",
+   "label": "Dry Matter / SmartFresh Tier"
+  },
+  {
+   "description": "Select the DM% range and corresponding SmartFresh rate for this consignment",
+   "fieldname": "dm_smartfresh_tier",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "DM% / SmartFresh Tier",
+   "options": "\n23.0 to 26.9% : None\n27.0 to 27.9% : SF 50%\n28.0 to 29.9% : SF 75%\n>30% : SF 100%",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dm_pct_actual",
+   "fieldtype": "Float",
+   "label": "Actual DM%"
+  },
+  {
+   "fieldname": "cb_dm_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Pre-Harvest Forecast / batch reference (e.g. PHF 16)",
+   "fieldname": "phf_ref_no",
+   "fieldtype": "Data",
+   "label": "PHF Ref No"
+  },
+  {
+   "fieldname": "smartfresh_ref_no",
+   "fieldtype": "Data",
+   "label": "SmartFresh Ref No"
+  },
+  {
+   "description": "Optional link to the Pre-Harvest Forecast / batch",
+   "fieldname": "issued_by",
+   "fieldtype": "Link",
+   "label": "Issued By (Grower)",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "proforma_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Proforma Invoice",
+   "options": "Avocado Proforma Invoice"
+  },
+  {
+   "fieldname": "sb_commercial",
+   "fieldtype": "Section Break",
+   "label": "Commercial"
+  },
+  {
+   "fieldname": "commercial_invoice_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Commercial Invoice No",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_commercial",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_booking_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shipping Booking No",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb_shipment",
+   "fieldtype": "Section Break",
+   "label": "Shipment Details"
+  },
+  {
+   "default": "Halls",
+   "fieldname": "importer",
+   "fieldtype": "Data",
+   "label": "Importer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Container No",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "vessel_voy_ex_mombasa",
+   "fieldtype": "Data",
+   "label": "Vessel-Voy ex Mombasa",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vessel_voy_pod",
+   "fieldtype": "Data",
+   "label": "Vessel-Voy POD"
+  },
+  {
+   "description": "MAERSK / CMA CGM / MSC etc.",
+   "fieldname": "shipping_line",
+   "fieldtype": "Data",
+   "label": "Shipping Line",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_shipment",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "port_of_discharge",
+   "fieldtype": "Data",
+   "label": "Port of Discharge",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "label": "Destination (Consignee)",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "etd_lokitela_orchards",
+   "fieldtype": "Date",
+   "label": "ETD Lokitela Orchards"
+  },
+  {
+   "fieldname": "etd_mombasa",
+   "fieldtype": "Date",
+   "label": "ETD Mombasa",
+   "read_only": 1
+  },
+  {
+   "fieldname": "eta_destination",
+   "fieldtype": "Date",
+   "label": "ETA Destination",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_route",
+   "fieldtype": "Section Break",
+   "label": "Route"
+  },
+  {
+   "default": "RED SEA",
+   "fieldname": "vessel_route",
+   "fieldtype": "Data",
+   "label": "Vessel Route"
+  },
+  {
+   "description": "e.g. SALALAH / JEDDAH",
+   "fieldname": "transhipment",
+   "fieldtype": "Data",
+   "label": "Transhipment"
+  },
+  {
+   "fieldname": "cb_route",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Hass",
+   "fieldname": "cultivar",
+   "fieldtype": "Data",
+   "label": "Cultivar",
+   "reqd": 1
+  },
+  {
+   "description": "Global G.A.P. number / GLN",
+   "fieldname": "ggn_no",
+   "fieldtype": "Data",
+   "label": "GGN No",
+   "reqd": 1
+  },
+  {
+   "description": "All four items must be ticked before the form can be submitted",
+   "fieldname": "sb_pti",
+   "fieldtype": "Section Break",
+   "label": "Pre-Trip Inspection (PTI)"
+  },
+  {
+   "default": "0",
+   "fieldname": "pti_no_damage",
+   "fieldtype": "Check",
+   "label": "No damage or holes"
+  },
+  {
+   "default": "0",
+   "fieldname": "pti_refrigeration_ok",
+   "fieldtype": "Check",
+   "label": "Refrigeration is working"
+  },
+  {
+   "fieldname": "cb_pti",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "pti_plugs_in_place",
+   "fieldtype": "Check",
+   "label": "Plugs are in place"
+  },
+  {
+   "default": "0",
+   "fieldname": "pti_container_cleaned",
+   "fieldtype": "Check",
+   "label": "Container has been cleaned"
+  },
+  {
+   "fieldname": "sb_pti_signoff",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pti_inspector",
+   "fieldtype": "Link",
+   "label": "PTI Inspected By",
+   "options": "User"
+  },
+  {
+   "fieldname": "cb_pti_signoff",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pti_inspection_datetime",
+   "fieldtype": "Datetime",
+   "label": "PTI Inspection Date/Time"
+  },
+  {
+   "description": "All four fields are mandatory at the loading bay",
+   "fieldname": "sb_logistics",
+   "fieldtype": "Section Break",
+   "label": "Logistics IDs"
+  },
+  {
+   "description": "Diesel generator serial \u2014 mandatory for the road journey",
+   "fieldname": "genset_no",
+   "fieldtype": "Data",
+   "label": "Genset No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "seal_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Seal No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_logistics",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "trailer_no",
+   "fieldtype": "Data",
+   "label": "Trailer No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb_driver",
+   "fieldtype": "Section Break",
+   "label": "Driver"
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "driver_id",
+   "fieldtype": "Data",
+   "label": "Driver ID / Passport"
+  },
+  {
+   "fieldname": "cb_driver",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driver_phone",
+   "fieldtype": "Data",
+   "label": "Driver Phone"
+  },
+  {
+   "fieldname": "transporter",
+   "fieldtype": "Data",
+   "label": "Transporter Company"
+  },
+  {
+   "fieldname": "departure_time",
+   "fieldtype": "Datetime",
+   "label": "Truck Departure Time"
+  },
+  {
+   "fieldname": "sb_manifest",
+   "fieldtype": "Section Break",
+   "label": "Pallet Manifest"
+  },
+  {
+   "fieldname": "pallets",
+   "fieldtype": "Table",
+   "label": "Pallets",
+   "options": "Avocado Dispatch Pallet"
+  },
+  {
+   "fieldname": "sb_manifest_totals",
+   "fieldtype": "Section Break",
+   "label": "Manifest Totals"
+  },
+  {
+   "fieldname": "total_pallets",
+   "fieldtype": "Int",
+   "label": "Total Pallets",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_cartons_4kg",
+   "fieldtype": "Int",
+   "label": "Total Cartons (4kg)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_manifest_totals_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_cartons_10kg",
+   "fieldtype": "Int",
+   "label": "Total Cartons (10kg)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_cartons",
+   "fieldtype": "Int",
+   "label": "Total Cartons",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_manifest_totals_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_net_kg",
+   "fieldtype": "Float",
+   "label": "Total Net (kg)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_gross_kg",
+   "fieldtype": "Float",
+   "label": "Total Gross (kg)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_ca",
+   "fieldtype": "Section Break",
+   "label": "Container Settings (CA Programme)"
+  },
+  {
+   "default": "6.0",
+   "fieldname": "set_point",
+   "fieldtype": "Float",
+   "label": "Set Point (\u00b0C)",
+   "reqd": 1
+  },
+  {
+   "default": "5.5",
+   "description": "Applied day 14",
+   "fieldname": "stepdown_1",
+   "fieldtype": "Float",
+   "label": "1st Stepdown (\u00b0C)",
+   "reqd": 1
+  },
+  {
+   "default": "5.0",
+   "description": "Applied day 28",
+   "fieldname": "stepdown_2",
+   "fieldtype": "Float",
+   "label": "2nd Stepdown (\u00b0C)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_ca",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "4.0",
+   "fieldname": "oxygen_pct",
+   "fieldtype": "Float",
+   "label": "Oxygen %",
+   "reqd": 1
+  },
+  {
+   "default": "6.0",
+   "fieldname": "co2_pct",
+   "fieldtype": "Float",
+   "label": "Carbon Dioxide %",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb_signoff",
+   "fieldtype": "Section Break",
+   "label": "Sign-offs"
+  },
+  {
+   "default": "Kaitet Tea Estate 1977 Ltd",
+   "fieldname": "exporter_company",
+   "fieldtype": "Data",
+   "label": "Exporter Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "exporter_name",
+   "fieldtype": "Data",
+   "label": "Exporter Representative"
+  },
+  {
+   "fieldname": "exporter_signoff_datetime",
+   "fieldtype": "Datetime",
+   "label": "Exporter Sign-off"
+  },
+  {
+   "fieldname": "cb_signoff_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inland_transport_name",
+   "fieldtype": "Data",
+   "label": "Inland Transport Rep"
+  },
+  {
+   "fieldname": "inland_transport_signoff_datetime",
+   "fieldtype": "Datetime",
+   "label": "Inland Transport Sign-off"
+  },
+  {
+   "fieldname": "cb_signoff_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Maersk",
+   "fieldname": "shipping_line_name",
+   "fieldtype": "Data",
+   "label": "Shipping Line Company"
+  },
+  {
+   "fieldname": "shipping_line_rep",
+   "fieldtype": "Data",
+   "label": "Shipping Line Rep"
+  },
+  {
+   "fieldname": "shipping_line_signoff_datetime",
+   "fieldtype": "Datetime",
+   "label": "Shipping Line Sign-off"
+  },
+  {
+   "fieldname": "cb_signoff_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Lokitela Orchards",
+   "fieldname": "loading_prepared_company",
+   "fieldtype": "Data",
+   "label": "Loading Sheet Prepared By Company"
+  },
+  {
+   "fieldname": "prepared_by",
+   "fieldtype": "Link",
+   "label": "Loading Sheet Prepared By (User)",
+   "options": "User"
+  },
+  {
+   "fieldname": "prepared_by_name",
+   "fieldtype": "Data",
+   "label": "Prepared By Name"
+  },
+  {
+   "fieldname": "prepared_signoff_datetime",
+   "fieldtype": "Datetime",
+   "label": "Prepared Sign-off"
+  },
+  {
+   "fieldname": "sb_extra_pi",
+   "fieldtype": "Section Break",
+   "label": "Extra PI Details (auto-filled)"
+  },
+  {
+   "fieldname": "exporter_pin",
+   "fieldtype": "Data",
+   "label": "KRA PIN",
+   "read_only": 1
+  },
+  {
+   "fieldname": "exporter_hcd",
+   "fieldtype": "Data",
+   "label": "AFFA HCD License",
+   "read_only": 1
+  },
+  {
+   "fieldname": "exporter_customs",
+   "fieldtype": "Data",
+   "label": "Customs No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_extra_pi_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "consignee_address",
+   "fieldtype": "Small Text",
+   "label": "Consignee Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "consignee_vat",
+   "fieldtype": "Data",
+   "label": "Consignee VAT",
+   "read_only": 1
+  },
+  {
+   "fieldname": "consignee_eori",
+   "fieldtype": "Data",
+   "label": "Consignee EORI",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_extra_pi_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phytosanitary_no",
+   "fieldtype": "Data",
+   "label": "Phytosanitary No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "eur1_no",
+   "fieldtype": "Data",
+   "label": "EUR.1 No",
+   "read_only": 1
+  },
+  {
+   "default": "0804.40.00",
+   "fieldname": "customs_tariff_no",
+   "fieldtype": "Data",
+   "label": "Customs Tariff No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_fob",
+   "fieldtype": "Currency",
+   "label": "Total FOB Value (EUR)",
+   "options": "EUR",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Avocado Dispatch Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-05-17 20:32:09.340304",
+ "modified_by": "Administrator",
+ "module": "Upande Avocado",
+ "name": "Avocado Dispatch Form",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "proforma_invoice,container_no,seal_no,vehicle_no,commercial_invoice_no",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "container_no",
+ "track_changes": 1
+}

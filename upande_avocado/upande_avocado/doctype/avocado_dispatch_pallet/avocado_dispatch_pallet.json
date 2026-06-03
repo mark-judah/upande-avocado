@@ -1,18 +1,21 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2026-05-17 19:42:23.094706",
+ "creation": "2026-05-17 19:42:26.187027",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "pallet",
-  "warehouse",
+  "carton_type_origin",
+  "box_locs_per_pallet",
   "count_size",
   "cartons",
+  "pulp_temperature",
+  "temptale_id",
+  "carton_kg_type",
   "net_weight_kg",
-  "packing_code",
-  "selected"
+  "packing_code"
  ],
  "fields": [
   {
@@ -20,18 +23,25 @@
    "fieldname": "pallet",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Pallet",
+   "label": "Pallet No",
    "options": "Pallet Record",
    "reqd": 1
   },
   {
    "columns": 1,
-   "fetch_from": "pallet.cold_room",
-   "fieldname": "warehouse",
+   "fetch_from": "pallet.grower",
+   "fieldname": "carton_type_origin",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Warehouse",
+   "label": "Carton Type",
    "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "box_locs_per_pallet",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Box Locs/Pallet"
   },
   {
    "columns": 1,
@@ -39,7 +49,7 @@
    "fieldname": "count_size",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Size",
+   "label": "Count Size",
    "read_only": 1
   },
   {
@@ -48,44 +58,53 @@
    "fieldname": "cartons",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Box Count",
+   "label": "No. Cartons",
    "read_only": 1
   },
   {
    "columns": 1,
+   "fieldname": "pulp_temperature",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Pulp Temp \u00b0C"
+  },
+  {
+   "columns": 2,
+   "fieldname": "temptale_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Temptale ID"
+  },
+  {
+   "fetch_from": "pallet.carton_type",
+   "fieldname": "carton_kg_type",
+   "fieldtype": "Data",
+   "label": "Carton Kg Type",
+   "read_only": 1
+  },
+  {
    "fetch_from": "pallet.net_weight_kg",
    "fieldname": "net_weight_kg",
    "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Net (kg)",
+   "label": "Net Kg",
    "read_only": 1
   },
   {
-   "columns": 2,
-   "fetch_from": "pallet.grn_number",
+   "fetch_from": "pallet.packing_code",
    "fieldname": "packing_code",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Packing Code / GRN",
+   "label": "Packing Code",
    "read_only": 1
-  },
-  {
-   "columns": 2,
-   "default": "0",
-   "fieldname": "selected",
-   "fieldtype": "Check",
-   "in_list_view": 1,
-   "label": "Pick"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-05-17 20:32:07.624847",
+ "modified": "2026-05-17 20:32:09.222302",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
- "name": "Pallet Allocation Item",
+ "name": "Avocado Dispatch Pallet",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",

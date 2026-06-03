@@ -1,79 +1,136 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
- "creation": "2026-05-15 07:29:08.509524",
- "default_view": "List",
+ "autoname": "format:PA-{YYYY}-{#####}",
+ "creation": "2026-05-17 19:42:31.192974",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "intro_html",
-  "staging_consignee",
-  "cb_meta",
-  "last_synced_at",
-  "last_synced_by",
+  "consignee",
+  "consignee_name",
+  "cb1",
+  "status",
+  "allocated_at",
+  "allocated_by",
   "sb_pallets",
-  "pallets"
+  "pallets",
+  "sb_notes",
+  "notes"
  ],
  "fields": [
   {
-   "fieldname": "intro_html",
-   "fieldtype": "HTML",
-   "options": "<p style=\"color:#6c7178;font-size:12px;margin:0;\">Tick \u201cPick\u201d on the pallets you want to allocate, set a Consignee in the field below, then run <strong>Allocate to Consignee</strong> from the menu. Use <strong>Refresh from stock</strong> after pallets are added to or removed from cold storage.</p>"
-  },
-  {
-   "fieldname": "staging_consignee",
+   "fieldname": "consignee",
    "fieldtype": "Link",
-   "label": "Consignee (for bulk allocate)",
-   "options": "Customer"
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Consignee",
+   "options": "Avocado Consignee",
+   "reqd": 1
   },
   {
-   "fieldname": "cb_meta",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "last_synced_at",
-   "fieldtype": "Datetime",
-   "label": "Last Synced",
+   "fetch_from": "consignee.consignee_name",
+   "fieldname": "consignee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Consignee Name",
    "read_only": 1
   },
   {
-   "fieldname": "last_synced_by",
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Reserved",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Reserved\nConfirmed\nDispatched\nCancelled"
+  },
+  {
+   "default": "Now",
+   "fieldname": "allocated_at",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Allocated At"
+  },
+  {
+   "default": "__user",
+   "fieldname": "allocated_by",
    "fieldtype": "Link",
-   "label": "Last Synced By",
+   "label": "Allocated By",
    "options": "User",
    "read_only": 1
   },
   {
    "fieldname": "sb_pallets",
    "fieldtype": "Section Break",
-   "label": "Pallets in Stock"
+   "label": "Pallets"
   },
   {
    "fieldname": "pallets",
    "fieldtype": "Table",
    "label": "Pallets",
-   "options": "Pallet Allocation Item"
+   "options": "Pallet Allocation Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "issingle": 1,
  "links": [],
- "modified": "2026-05-15 07:29:33.057044",
+ "modified": "2026-05-17 20:32:07.731166",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
  "name": "Pallet Allocation",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
    "create": 1,
    "delete": 1,
    "email": 1,
+   "export": 1,
    "print": 1,
    "read": 1,
+   "report": 1,
    "role": "System Manager",
-   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
    "share": 1,
    "write": 1
   }
@@ -83,5 +140,6 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "consignee",
  "track_changes": 1
 }

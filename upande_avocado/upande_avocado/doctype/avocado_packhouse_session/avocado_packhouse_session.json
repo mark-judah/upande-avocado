@@ -1,8 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2026-05-15 07:27:11.384442",
- "default_view": "List",
+ "creation": "2026-05-17 19:42:29.744689",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -35,7 +34,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-05-15 07:27:11.384442",
+ "modified": "2026-05-17 20:32:09.631857",
  "modified_by": "Administrator",
  "module": "Upande Avocado",
  "name": "Avocado Packhouse Session",
@@ -48,7 +47,6 @@
    "print": 1,
    "read": 1,
    "role": "System Manager",
-   "select": 1,
    "share": 1,
    "write": 1
   }
